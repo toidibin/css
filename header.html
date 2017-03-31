@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .primary-header {
+        height: 320px;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+        background-position: center;
+        background-attachment: scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .primary-header .content {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: box;
+        display: flex;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -o-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -o-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+    }
+    
+    .primary-header .mask {
+        background-color: rgba(55, 68, 84, .82);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="primary-header" style="background-image: url(https://ohc0m0ub0.qnssl.com/osx.jpeg)">
+        <div class="content parallax-content js-gradient-header" style="background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(64, 172, 110)), to(rgb(54, 156, 197))); opacity: 1; transform: translate(0px, 0px);">
+            <div class="toggle-nav">
+                <!-- <button type="button" name="button" class="btn btn-light" id="nav-menu">Menu</button> -->
+            </div>
+            <div class="container">
+                <h1 class="title">
+                    w3cTrain
+                </h1>
+                <p class="sub-title">
+                    Keep Moving
+                </p>
+            </div>
+        </div>
+        <div class="mask">
+        </div>
+        <header class="mobile-nav">
+            <nav class="nav">
+                <ul id="cd-navigation">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/contribute">投稿</a></li>
+                    <li><a href="http://helkyle.com">关于我</a></li>
+                    <li><a href="https://github.com/w3ctrain/Article">所有文章</a></li>
+                </ul>
+            </nav>
+        </header>
+    </header>
+    <div style="height: 2000px;"></div>
+</body>
+ <script type="text/javascript">
+ 		var ele = document.getElementsByClassName('content')[0];
+        document.addEventListener('scroll',winScroll,false);
+        function winScroll(e){
+        	console.log(document.body.scrollTop);
+        	var sh = document.body.scrollTop;
+        	ele.style.opacity = 1-sh/320;
+        	if(sh > 120){
+        		ele.style.transform = "translate(0px,"+(sh-80)+"px)";
+        	}else{
+        		ele.style.transform = "translate(0px,0px)";
+        	}        	
+        }
+        </script>
+
+</html>
